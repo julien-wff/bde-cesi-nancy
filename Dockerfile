@@ -4,7 +4,7 @@ ARG DIRECTUS_VERSION=latest
 # Install dependencies
 FROM node:20.11-alpine AS builder
 
-RUN npm i -g pnpm
+RUN npm i -g pnpm@8.6.0
 
 WORKDIR /build
 COPY pnpm-lock.yaml .
