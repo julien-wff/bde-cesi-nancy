@@ -1,4 +1,4 @@
-ARG DIRECTUS_VERSION=latest
+ARG DIRECTUS_VERSION=10.9.3
 
 
 # Install dependencies
