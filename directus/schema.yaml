@@ -4069,7 +4069,7 @@ fields:
     schema:
       name: membership_user
       table: memberships
-      data_type: varchar
+      data_type: char
       default_value: null
       max_length: 36
       numeric_precision: null
@@ -4839,7 +4839,7 @@ fields:
     schema:
       name: user_created
       table: notifications
-      data_type: varchar
+      data_type: char
       default_value: null
       max_length: 36
       numeric_precision: null
@@ -5439,7 +5439,7 @@ fields:
     schema:
       name: user_created
       table: push_subscriptions
-      data_type: varchar
+      data_type: char
       default_value: null
       max_length: 36
       numeric_precision: null
