@@ -11,10 +11,19 @@ COPY pnpm-lock.yaml .
 
 RUN pnpm fetch
 
-ADD . ./
-RUN pnpm -r -F @bde-cesi-nancy/web -F directus-extension-bde-cesi-nancy-bundle -F directus-extension-bde-cesi-nancy-migrations install --offline --frozen-lockfile --ignore-scripts
+COPY . ./
 
-RUN pnpm -r -F @bde-cesi-nancy/web -F directus-extension-bde-cesi-nancy-bundle -F directus-extension-bde-cesi-nancy-migrations run build
+RUN pnpm -r \
+    -F @bde-cesi-nancy/web \
+    -F directus-extension-bde-cesi-nancy-bundle \
+    -F directus-extension-bde-cesi-nancy-migrations \
+    install --offline --frozen-lockfile --ignore-scripts \
+    && \
+    pnpm -r \
+    -F @bde-cesi-nancy/web \
+    -F directus-extension-bde-cesi-nancy-bundle \
+    -F directus-extension-bde-cesi-nancy-migrations \
+    run build
 
 
 # Build web app
@@ -36,6 +45,6 @@ FROM directus/directus:${DIRECTUS_VERSION} AS directus
 WORKDIR /directus
 COPY --from=builder /build/directus/extensions/dist /directus/extensions/directus-extension-bde-cesi-nancy-bundle/dist
 COPY --from=builder /build/directus/extensions/package.json /directus/extensions/directus-extension-bde-cesi-nancy-bundle/package.json
-COPY --from=builder /build/directus/migrations/dist /directus/extensions/migrations
+COPY --from=builder /build/directus/migrations/dist/src /directus/extensions/migrations
 
 CMD ["/bin/sh", "-c", "npx directus schema apply -y ./schema/schema.yaml && npx directus bootstrap && npx directus start"]
