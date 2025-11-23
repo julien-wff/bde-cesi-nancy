@@ -175,6 +175,6 @@
         </div>
     </div>
     <div class="footer-copyright">
-        Copyright &copy; 2022 - 2023 tous les droits réservés.
+        Copyright &copy; 2022 - 2026 tous droits réservés.
     </div>
 </footer>
