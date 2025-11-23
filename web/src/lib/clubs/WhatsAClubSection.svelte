@@ -66,7 +66,7 @@
         intégrante de notre communication.
     </AboutSectionQuestion>
 
-    <a href="/contact?category=club&subject=Creation+d'un+club+<NOM>" slot="cta">
+    <a href="/contact?subject=Création+d'un+club+<NOM>" slot="cta">
         <Button icon="arrow-forward-circle-filled-white">Je veux créer un club</Button>
     </a>
 </SectionContainer>

@@ -39,7 +39,7 @@
         <p class="small">{post.subtitle}</p>
     {/if}
     <p class="description">{post.description}</p>
-    <a href="/contact?category=bureau&subject=Postuler+comme+{post.title.replace(/ /g, '+')}">
+    <a href="/contact?subject=Postuler+comme+{post.title.replace(/ /g, '+')}">
         <Button icon="flash-filled-white">Je suis intéressé</Button>
     </a>
 </div>
