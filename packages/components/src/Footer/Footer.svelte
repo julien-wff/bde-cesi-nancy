@@ -153,6 +153,10 @@
                         <p class="small"><a href="/legal-notice">Mentions légales</a></p>
                         <p class="small"><a href="/rgpd">RGPD</a></p>
                     </div>
+                    <div class="footer-cols">
+                        <p class="small"><a href="https://github.com/julien-wff/bde-cesi-nancy">Code source</a></p>
+                        <p class="small"><a href="https://julien-wff.com/">WebMaster</a></p>
+                    </div>
                 </div>
             </div>
             <div class="footer-socials">
