@@ -11,30 +11,11 @@
     import SectionContainer from '$lib/layout/SectionContainer.svelte';
     import Meta from '$lib/Meta.svelte';
     import type { IContactFormData } from '@bde-cesi-nancy/types/api';
-    import type { TransportError } from '@directus/sdk';
-    import { getDirectus } from '$lib/context';
-
-    const directus = getDirectus();
 
     let isLoading = false;
-    let error: string | null = null;
+    let error: string | null = 'Formulaire non disponible';
 
     function handleFormSubmit({ detail: form }: { detail: IContactFormData }) {
-        isLoading = true;
-        error = null;
-
-        directus.transport.post('/contact', form)
-            .then(() => {
-                isSubmitted.set(true);
-            })
-            .catch((err: TransportError) => {
-                error = err.response?.errors?.map(e => e.message)?.join(', ')
-                    || err.response?.raw?.error
-                    || err.message;
-            })
-            .finally(() => {
-                isLoading = false;
-            });
     }
 </script>
 

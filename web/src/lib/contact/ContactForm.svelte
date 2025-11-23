@@ -1,15 +1,11 @@
 <script lang="ts">
     import { page } from '$app/stores';
-    import { getLoginStatus, getUserProfile } from '$lib/context';
     import Button from '@bde-cesi-nancy/components/src/Button/Button.svelte';
     import Input from '@bde-cesi-nancy/components/src/Input/Input.svelte';
     import Select from '@bde-cesi-nancy/components/src/Select/Select.svelte';
     import TextArea from '@bde-cesi-nancy/components/src/TextArea/TextArea.svelte';
     import type { IContactFormData } from '@bde-cesi-nancy/types/api';
     import { createEventDispatcher } from 'svelte';
-
-    const me = getUserProfile();
-    const loginStatus = getLoginStatus();
 
     export let disabled = false;
     export let error: string | null = null;
@@ -36,15 +32,6 @@
 
     if ($page.url.searchParams.has('subject'))
         form.subject = $page.url.searchParams.get('subject')!;
-
-    function setUserDetails() {
-        form.firstName = $me.first_name;
-        form.lastName = $me.last_name;
-        form.email = $me.email;
-    }
-
-    $: if ($loginStatus === 'LOGGED_IN' && $me)
-        setUserDetails();
 
     const dispatch = createEventDispatcher();
 
