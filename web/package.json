@@ -21,7 +21,7 @@
     "swiper": "^11.0.7"
   },
   "devDependencies": {
-    "@sveltejs/adapter-node": "^2.1.2",
+    "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.30.4",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",

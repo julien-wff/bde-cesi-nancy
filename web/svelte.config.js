@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-static';
 import autoprefixer from 'autoprefixer';
 import preprocess from 'svelte-preprocess';
 
@@ -13,7 +13,10 @@ const config = {
     }),
 
     kit: {
-        adapter: adapter()
+        adapter: adapter(),
+        prerender: {
+            handleHttpError: 'warn',
+        },
     }
 };
 
