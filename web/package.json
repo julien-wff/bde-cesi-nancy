@@ -16,9 +16,7 @@
   "dependencies": {
     "@bde-cesi-nancy/components": "workspace:*",
     "@bde-cesi-nancy/types": "workspace:*",
-    "@directus/sdk": "^10.3.5",
-    "svelte": "^4.2.12",
-    "swiper": "^11.0.7"
+    "svelte": "^4.2.12"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^2.0.3",
