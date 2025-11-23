@@ -1,11 +1,5 @@
 <script lang="ts">
-    import type { User } from '@bde-cesi-nancy/types';
-    import { getContext } from 'svelte';
-    import type { Writable } from 'svelte/store';
     import HeaderLink from './HeaderLink.svelte';
-
-    const loginStatus = getContext<Writable<string>>('loginStatus');
-    const me = getContext<Writable<User>>('me');
 </script>
 
 <style>
@@ -126,14 +120,14 @@
         <HeaderLink href="/clubs" icon="people-filled-black" label="Clubs"/>
         <HeaderLink href="/contact" icon="mail-filled-black" label="Contact"/>
         <div class="members-link">
-            <HeaderLink href={$loginStatus === 'LOGGED_IN' ? "/member-dashboard" : "/members"}
-                        icon="person-filled-black"
-                        label={$me ? $me.first_name : "Membre"}/>
+            <HeaderLink href="https://dossier.bdecesinancy.fr"
+                        icon="document-text-filled-black"
+                        label="Dossier"/>
         </div>
     </nav>
     <div class="nav-members">
-        <HeaderLink href={$loginStatus === 'LOGGED_IN' ? "/member-dashboard" : "/members"}
-                    icon="person-filled-black"
-                    label={$me ? $me.first_name : "Espace Membre"}/>
+        <HeaderLink href="https://dossier.bdecesinancy.fr"
+                    icon="document-text-filled-black"
+                    label="Dossier de synthèse"/>
     </div>
 </header>

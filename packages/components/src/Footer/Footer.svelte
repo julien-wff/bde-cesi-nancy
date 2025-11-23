@@ -139,7 +139,7 @@
                         </div>
                         <div>
                             <p class="small"><a href="/contact">Contact</a></p>
-                            <p class="small"><a href="/members">Membre</a></p>
+                            <p class="small"><a href="https://dossier.bdecesinancy.fr">Dossier de synthèse</a></p>
                         </div>
                     </div>
                 </div>
